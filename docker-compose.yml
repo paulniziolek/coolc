@@ -1,0 +1,15 @@
+services:
+  coolc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    volumes:
+      # Mount the entire project directory
+      - .:/cool
+    working_dir: /cool
+    # Keep container running for interactive use
+    stdin_open: true
+    tty: true
+    # Optional: set container name for easier reference
+    container_name: coolc-dev
